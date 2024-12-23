@@ -8,6 +8,12 @@ export default {
   ],
   theme: {
     extend: {},
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+    }
   },
   plugins: [],
 } satisfies Config;
