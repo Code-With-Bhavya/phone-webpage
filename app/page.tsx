@@ -1,5 +1,7 @@
 "use client"
 import { Search, Menu, ThumbsUp, ThumbsDown } from "lucide-react"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   return (
@@ -32,7 +34,7 @@ export default function Home() {
               <h1 className="font-medium mt-2 text-[#253858]">Xiaomi Redmi Note 14 Pro 5G Prices</h1>
               <div className="w-full h-[50px] mt-3 rounded-[12px] px-4 border border-zinc-300 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <img width={14} height={14} src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart icon"/>
+                  <Image width={14} height={14} src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart icon"/>
                   <p className="text-xs text-zinc-600">Flipkart</p>
                 </div>
 
@@ -69,7 +71,7 @@ export default function Home() {
 
               <ol className="list-disc list-inside text-[#fe223c] mt-2">
                 <li className="text-[0.8em]"> <span className="text-[#2f466f] pl-[-10px]"> Gorgeous Design </span></li>
-                <li className="text-[0.8em] pt-3"> <span className="text-[#2f466f] pl-[-10px]"> Pricing could've been more aggressive </span></li>
+                <li className="text-[0.8em] pt-3"> <span className="text-[#2f466f] pl-[-10px]"> Pricing could have been more aggressive </span></li>
               </ol>
 
 
