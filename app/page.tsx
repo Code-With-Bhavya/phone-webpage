@@ -1,5 +1,5 @@
 "use client"
-import { Search, Menu, ThumbsUp, ThumbsDown, Cpu, Camera, Microchip, Rss, Smartphone, SquareUser, BatteryMedium, Bot } from "lucide-react"
+import { Search, Menu, ThumbsUp, ThumbsDown, Cpu, Camera, Microchip, Rss, Smartphone, SquareUser, BatteryMedium, Bot, MessageSquareText } from "lucide-react"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
@@ -202,6 +202,15 @@ export default function Home() {
                 <li className="text-[0.8em] pt-3"> <span className="text-[#2f466f] pl-[-10px]"> Pricing could have been more aggressive </span></li>
               </ol>
             </div>
+          </div>
+
+          <div className="mt-6">
+            <div className="flex gap-2">
+              <MessageSquareText className="w-5 text-blue-500"/>
+              <h1 className="text-[#2f466f] font-medium">Verdict</h1>
+            </div>
+
+            <p className="text-[#2f466f] mt-4 text-sm lg:text-[1em]">The Redmi Note 14 Pro Plus stands out with its excellent display, dependable battery, capable camera, and sleek design, making it a compelling choice. However, its drawbacks, including bloatware, spammy notifications, and a steep price, cannot be overlooked. Alternatives like the Vivo T3 Ultra offer better performance, the Realme GT 6T provides balanced features, and the Motorola Edge 50 Pro delivers a clean UI experience.</p>
           </div>
         </div>
       </main>  
