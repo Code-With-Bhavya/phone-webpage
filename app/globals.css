@@ -12,3 +12,32 @@ body {
 #product {
   height: calc(100% - 200px);
 }
+
+#imgCont {
+  display: flex !important;
+}
+
+.slick-dots, .slick-thumb {
+  display: flex !important;
+  gap: 20px;
+  justify-content: center;
+  position: relative !important;
+/*  background: #000;*/
+}
+
+.slick-dots li {
+  position: relative !important;
+}
+
+.slick-active a div {
+  background-color: #c3cddb;
+}
+
+.slick-dots li a {
+
+}
+
+
+.slick-arrow::before {
+  color: #9baec2 !important;
+}

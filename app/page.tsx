@@ -3,8 +3,28 @@ import { Search, Menu, ThumbsUp, ThumbsDown } from "lucide-react"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import Slider from "react-slick";
 
 export default function Home() {
+  const settings = {
+    customPaging: function(i) {
+      return (
+        <a>
+          <div className="relative w-[40px] h-[40px] flex items-center justify-center bg-[#E3EEFF] p-1 rounded-[6px]">
+            <img className=" h-full" alt="phone" src={`https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-${i + 1}.jpg`} />
+          </div>
+        </a>
+      );
+    },
+    dots: true,
+    dotsClass: "slick-dots slick-thumb",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+  const baseUrl = "../public/"
+
   return (
     <>
     <div className="w-screen relative ">
@@ -28,8 +48,22 @@ export default function Home() {
           </div>
           <div className="w-full relative h-full">
             <div id="product" className="w-full flex">
-              <div className="w-full h-full bg-green-400"></div>
-              <div className="w-full h-full bg-red-400"></div>
+              <div className="w-[34%] relative h-full relative flex items-center justify-center">
+               <div className="slider-container w-[80%]">
+                  <Slider {...settings}>
+                    <div id="imgCont" className="w-full flex items-center justify-center">
+                      <Image width={140} height={500} alt="Phone Image" src="https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-1.jpg" />
+                    </div>
+                    <div id="imgCont" className="w-full flex items-center justify-center">
+                      <Image width={140} height={500} alt="Phone Image" src="https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-2.jpg" />
+                    </div>
+                    <div id="imgCont" className="w-full flex justify-center">
+                      <Image width={24} height={500} className="absolute left-[50%] translate-x-[-50%]" alt="Phone Image" src="https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-3.jpg" />
+                    </div>
+                  </Slider>
+                </div>
+              </div>
+              <div className="w-1/2 h-full bg-red-400"></div>
             </div>
             <div className="w-full relative h-[140px] border-t border-zinc-300">
               <h1 className="font-medium mt-2 text-[#253858]">Xiaomi Redmi Note 14 Pro 5G Prices</h1>
