@@ -23,7 +23,6 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1
   };
-  const baseUrl = "../public/"
 
   return (
     <>
