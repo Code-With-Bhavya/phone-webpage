@@ -5,9 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Slider from "react-slick";
 import CircularProgressBar from "./components/progressbar"
-
+import { useEffect, useRef } from 'react'
+import { useState } from 'react'
 
 export default function Home() {
+  const [Selected, setSelected] = useState('overview')
+
   const settings = {
     customPaging: function(i: number) {
       return (
@@ -25,11 +28,56 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1
   };
+  const stickyNavRef = useRef<HTMLDivElement | null>(null);
+
+  let triggerDown = true;
+  let triggerUp = false;
+  useEffect(()=> {
+    window.addEventListener("scroll", ()=> {
+      let scrollPosition = window.scrollY;
+      const target = 600
+
+      if (scrollPosition >= target && triggerDown) {
+        triggerDown = false
+        triggerUp = true
+        downTrigger()
+      }
+
+      if (scrollPosition <= target && triggerUp) {
+        triggerUp = false
+        triggerDown = true
+        upTrigger()
+      }
+    })
+
+    function downTrigger() {
+      console.log("down Triggered")
+      stickyNavRef.current.style.position = "sticky"
+      stickyNavRef.current.style.top = "0px"
+    }
+
+    function upTrigger() {
+      console.log('up triggered')
+      stickyNavRef.current.style.position = "absolute"
+      stickyNavRef.current.style.top = "-100%"
+    }
+  },[])
 
   return (
     <>
     <div className="w-screen relative ">
-      <nav className="w-full bg-[#023359] h-[64px] flex items-center px-6 justify-between">
+      <div ref={stickyNavRef} className="absolute z-10 top-[-100%] h-[50px] flex overflow-auto scrollbar-none w-full transition-all duration-300 bg-[#023359]">
+        <div onClick={()=> setSelected('overview')} className={`${Selected == "overview" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>Overview</div>
+        <div onClick={()=> setSelected('specs')} className={`${Selected == "specs" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>Specs</div>
+        <div onClick={()=> setSelected('photos')} className={`${Selected == "photos" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>Photos</div>
+        <div onClick={()=> setSelected('prices')} className={`${Selected == "prices" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>Prices</div>
+        <div onClick={()=> setSelected('compare')} className={`${Selected == "compare" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>Compare</div>
+        <div onClick={()=> setSelected('expert')} className={`${Selected == "expert" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>Expert View</div>
+        <div onClick={()=> setSelected('news')} className={`${Selected == "news" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>News</div>
+        <div onClick={()=> setSelected('competators')} className={`${Selected == "competators" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>Competators</div>
+        <div onClick={()=> setSelected('benchmarks')} className={`${Selected == "benchmarks" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center`}>Benchmarks</div>
+      </div>
+      <nav className="w-full bg-[#023359] h-[64px] overflow-hidden flex items-center px-6 justify-between">
         <Menu className="text-white cursor-pointer"/>
         <h1 className="text-[1.6em] text-white font-semibold">Logo</h1>
         <Search className="text-white cursor-pointer"/>
@@ -37,7 +85,7 @@ export default function Home() {
 
       <main className="bg-[#f2f7ff] w-full pt-[10px] px-[10px]">
         {/*container*/}
-        <div className="w-full  h-full h-screen bg-white p-[14px] relative">
+        <div className="w-full  h-full h-screen max-h-[120vh] bg-white p-[14px] relative">
           <div id="name" className="w-full relative h-[83px] border-b border-zinc-300">
             <h1 className="trunk txt-heading font-semibold text-xl text-[#253858]">Xiaomi Redmi Note 14 Pro+ 5G</h1>
             <p className="text-xs text-[#7b879b]">Market Satus: <span className="text-[#2f466f]"> Available </span> | Released On:<span className="text-[#2f466f]"> 09 Dec 2024 </span> </p>
@@ -67,7 +115,7 @@ export default function Home() {
 
               <div className="w-[66%] h-full  pt-4 lg:pt-10 pl-6 lg:pl-0">
                 <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858]">Key Specifications</h1>
-                <div className="w-full h-fit-content mt-2 grid grid-cols-1 lg:grid-cols-2 gap-2 ">
+                <div className="w-full h-fit-content mt-2 grid grid-cols-1 lg:grid-cols-2 gap-1 ">
                   <div className="h-[50px] lg:h-[100px] flex items-center">
                     <Cpu className="text-[#2D3F5E]"/>
                     <div className="ml-2 lg:ml-4">
@@ -151,7 +199,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full mt-[10px] h-full h-screen bg-white p-[14px] relative">
+        <div className="w-full mt-[10px] h-screen bg-white p-[14px] relative">
           <div className="w-full h-[70px] border-b border-zinc-300 flex justify-between">
             <div>
               <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858]">Expert View</h1>
@@ -213,7 +261,26 @@ export default function Home() {
             <p className="text-[#2f466f] mt-4 text-sm lg:text-[1em]">The Redmi Note 14 Pro Plus stands out with its excellent display, dependable battery, capable camera, and sleek design, making it a compelling choice. However, its drawbacks, including bloatware, spammy notifications, and a steep price, cannot be overlooked. Alternatives like the Vivo T3 Ultra offer better performance, the Realme GT 6T provides balanced features, and the Motorola Edge 50 Pro delivers a clean UI experience.</p>
           </div>
         </div>
-      </main>  
+
+        <div className="w-full mt-[10px] h-screen bg-white relative border border-[#e6e6ef] rounded-[10px]">
+          <div className="w-full h-[120px] bg-gradient-to-t from-[#e6eafa] to-white p-[14px] rounded-t-[10px]">
+            <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858] ">Xiaomi Redmi Note 14 Pro+ 5G Specifications</h1>
+            <div className="flex gap-2 w-full mt-2 overflow-auto scrollbar-none">
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Performance</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Design</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Display</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Camera</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Battery</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Storage</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Software</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Connectivity</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Sound</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Seonsors</div>
+            </div>
+          </div>
+          <div className="w-full h-full p-[14px]"></div>
+        </div>
+      </main>
     </div>
     </>
   );

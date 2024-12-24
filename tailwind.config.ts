@@ -15,5 +15,5 @@ export default {
       square: 'square',
     }
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 } satisfies Config;
