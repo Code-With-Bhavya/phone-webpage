@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Slider from "react-slick";
+import CircularProgressBar from "./components/progressbar"
+
 
 export default function Home() {
   const settings = {
@@ -150,6 +152,29 @@ export default function Home() {
         </div>
 
         <div className="w-full mt-[10px] h-full h-screen bg-white p-[14px] relative">
+          <div className="w-full h-[70px] border-b border-zinc-300 flex justify-between">
+            <div>
+              <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858]">Expert View</h1>
+              <p className="text-xs text-[#7b879b]">By <a className="text-blue-600 underline" href="https://project-page.vercel.app">Shubh Bhushan</a> | On Dec 12 2024</p>
+            </div>
+
+            <div className="w-[120px] h-[40px] border border-blue-500 rounded-[12px] flex items-center justify-center">
+              <p className="text-xs text-[#7b879b]"><span className="text-[#253858] font-semibold">8/10</span> by Expert</p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap w-full gap-6 my-4">
+            <CircularProgressBar percentage={85} type={'Design'}/>
+            <CircularProgressBar percentage={85} type={'Display'}/>
+            <CircularProgressBar percentage={75} type={'Performance'}/>
+            <CircularProgressBar percentage={85} type={'Battery'}/>
+            <CircularProgressBar percentage={80} type={'Camera'}/>
+            <CircularProgressBar percentage={80} type={'Software'}/>
+            <CircularProgressBar percentage={80} type={'Sound'}/>
+            <CircularProgressBar percentage={80} type={'Usage'}/>
+            <CircularProgressBar percentage={70} type={'VFM'}/>
+          </div>
+
           <div className="relative w-full flex gap-2 mt-4 h-[210px]">
             <div className="h-full w-full bg-[#f4faf7] px-[9px] py-[16px]">
               <div className="w-full flex gap-2">
@@ -164,8 +189,8 @@ export default function Home() {
                 <li className="text-[0.8em] pt-3"> <span className="text-[#2f466f] pl-[-10px]"> Reliable battery life </span></li>
                 <li className="text-[0.8em] pt-3"> <span className="text-[#2f466f] pl-[-10px]"> Consistent gaming </span></li>
               </ol>
-
             </div>
+
             <div className="h-full w-full bg-[#fff8f9] px-[9px] py-[16px]">
               <div className="w-full flex gap-2">
                 <ThumbsDown className="text-[#fe223c] w-[1em]"/>
@@ -176,8 +201,6 @@ export default function Home() {
                 <li className="text-[0.8em]"> <span className="text-[#2f466f] pl-[-10px]"> Gorgeous Design </span></li>
                 <li className="text-[0.8em] pt-3"> <span className="text-[#2f466f] pl-[-10px]"> Pricing could have been more aggressive </span></li>
               </ol>
-
-
             </div>
           </div>
         </div>
