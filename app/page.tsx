@@ -7,7 +7,7 @@ import Slider from "react-slick";
 
 export default function Home() {
   const settings = {
-    customPaging: function(i) {
+    customPaging: function(i: number) {
       return (
         <a>
           <div className="relative w-[40px] h-[40px] flex items-center justify-center bg-[#E3EEFF] p-1 rounded-[6px]">
