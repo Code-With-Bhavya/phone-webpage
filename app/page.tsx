@@ -1,5 +1,5 @@
 "use client"
-import { Search, Menu, ThumbsUp, ThumbsDown } from "lucide-react"
+import { Search, Menu, ThumbsUp, ThumbsDown, Cpu, Camera, Microchip, Rss, Smartphone, SquareUser, BatteryMedium, Bot } from "lucide-react"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
@@ -10,7 +10,7 @@ export default function Home() {
     customPaging: function(i: number) {
       return (
         <a>
-          <div className="relative w-[40px] h-[40px] flex items-center justify-center bg-[#E3EEFF] p-1 rounded-[6px]">
+          <div className="relative w-[30px] h-[30px] md:w-[40px] md:h-[40px] flex items-center justify-center bg-[#E3EEFF] p-1 rounded-[6px]">
             <img className=" h-full" alt="phone" src={`https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-${i + 1}.jpg`} />
           </div>
         </a>
@@ -62,7 +62,76 @@ export default function Home() {
                   </Slider>
                 </div>
               </div>
-              <div className="w-1/2 h-full bg-red-400"></div>
+
+              <div className="w-[66%] h-full  pt-4 lg:pt-10 pl-6 lg:pl-0">
+                <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858]">Key Specifications</h1>
+                <div className="w-full h-fit-content mt-2 grid grid-cols-1 lg:grid-cols-2 gap-2 ">
+                  <div className="h-[50px] lg:h-[100px] flex items-center">
+                    <Cpu className="text-[#2D3F5E]"/>
+                    <div className="ml-2 lg:ml-4">
+                      <p className="text-[#7B879B] text-xs lg:text-sm">Processor</p>
+                      <h1 className="text-[#2F466F] text-[0.74em] lg:text-[1em]">Snapdragon 7s Gen 3 Octa core</h1>
+                    </div>
+                  </div>
+
+                  <div className="h-[50px] lg:h-[100px] flex items-center">
+                    <Camera className="text-[#2D3F5E]"/>
+                    <div className="ml-2 lg:ml-4">
+                      <p className="text-[#7B879B] text-xs lg:text-sm">Rear Camera</p>
+                      <h1 className="text-[#2F466F] text-[0.74em]  lg:text-[1em]">50+8+50 MP</h1>
+                    </div>
+                  </div>
+
+                  <div className="h-[50px] lg:h-[100px] flex items-center">
+                    <Microchip className="text-[#2D3F5E]"/>
+                    <div className="ml-2 lg:ml-4">
+                      <p className="text-[#7B879B] text-xs lg:text-sm">RAM | Storage</p>
+                      <h1 className="text-[#2F466F] text-[0.74em] lg:text-[1em]">8 GB | 128 GB</h1>
+                    </div>
+                  </div>
+
+                  <div className="h-[50px] lg:h-[100px] flex items-center">
+                    <Rss className="text-[#2D3F5E]"/>
+                    <div className="ml-2 lg:ml-4">
+                      <p className="text-[#7B879B] text-xs lg:text-sm">Network</p>
+                      <h1 className="text-[#2F466F] text-[0.74em] lg:text-[1em]">Dual SIM: 5G & 5G</h1>
+                    </div>
+                  </div>
+
+                  <div className="h-[50px] lg:h-[100px] flex items-center">
+                    <Smartphone className="text-[#2D3F5E]"/>
+                    <div className="ml-2 lg:ml-4">
+                      <p className="text-[#7B879B] text-xs lg:text-sm">Display</p>
+                      <h1 className="text-[#2F466F] text-[0.74em] lg:text-[1em]">6.67″ (16.94 cm) 120Hz AMOLED </h1>
+                    </div>
+                  </div>
+
+                  <div className="h-[50px] lg:h-[100px] flex items-center">
+                    <SquareUser className="text-[#2D3F5E]"/>
+                    <div className="ml-2 lg:ml-4">
+                      <p className="text-[#7B879B] text-xs lg:text-sm">Front Camera</p>
+                      <h1 className="text-[#2F466F] text-[0.74em] lg:text-[1em]">20 MP</h1>
+                    </div>
+                  </div>
+
+                  <div className="h-[50px] lg:h-[100px] flex items-center">
+                    <BatteryMedium className="text-[#2D3F5E]"/>
+                    <div className="ml-2 lg:ml-4">
+                      <p className="text-[#7B879B] text-xs lg:text-sm">Battery</p>
+                      <h1 className="text-[#2F466F] text-[0.74em] lg:text-[1em]">6200 mAh | 90W Fast Charging </h1>
+                    </div>
+                  </div>
+
+                  <div className="h-[50px] lg:h-[100px] flex items-center">
+                    <Bot className="text-[#2D3F5E]"/>
+                    <div className="ml-2 lg:ml-4">
+                      <p className="text-[#7B879B] text-xs lg:text-sm">OS</p>
+                      <h1 className="text-[#2F466F] text-[0.74em] lg:text-[1em]">Android v14</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
             <div className="w-full relative h-[140px] border-t border-zinc-300">
               <h1 className="font-medium mt-2 text-[#253858]">Xiaomi Redmi Note 14 Pro 5G Prices</h1>
