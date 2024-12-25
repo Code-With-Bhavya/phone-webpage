@@ -65,7 +65,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="w-screen relative ">
+    <div className="w-screen relative">
       <div ref={stickyNavRef} className="absolute z-10 top-[-100%] h-[40px] md:h-[50px] flex overflow-auto scrollbar-none w-full transition-all duration-300 bg-[#023359]">
         <div onClick={()=> setSelected('overview')} className={`${Selected == "overview" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Overview</div>
         <div onClick={()=> setSelected('specs')} className={`${Selected == "specs" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Specs</div>
@@ -83,9 +83,9 @@ export default function Home() {
         <Search className="text-white cursor-pointer"/>
       </nav>
 
-      <main className="bg-[#f2f7ff] w-full pt-[10px] px-[10px]">
+      <main className="bg-[#f2f7ff] w-full pt-[10px] px-[10px] flex flex-col items-center">
         {/*container*/}
-        <div className="w-full  h-full h-screen max-h-[120vh] bg-white p-[14px] relative">
+        <div className="w-full lg:w-[80%] min-h-screen bg-white p-[14px] relative">
           <div id="name" className="w-full relative h-[83px] border-b border-zinc-300">
             <h1 className="trunk txt-heading font-semibold text-xl text-[#253858]">Xiaomi Redmi Note 14 Pro+ 5G</h1>
             <p className="text-xs text-[#7b879b]">Market Satus: <span className="text-[#2f466f]"> Available </span> | Released On:<span className="text-[#2f466f]"> 09 Dec 2024 </span> </p>
@@ -96,8 +96,8 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full relative h-full">
-            <div id="product" className="w-full flex">
-              <div className="w-[34%] relative h-full relative flex items-center justify-center">
+            <div id="product" className="w-full flex py-6">
+              <div className="w-[34%] relative  relative flex items-center justify-center">
                <div className="slider-container w-[80%]">
                   <Slider {...settings}>
                     <div id="imgCont" className="w-full flex items-center justify-center">
@@ -113,7 +113,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-[66%] h-full  pt-4 lg:pt-10 pl-6 lg:pl-0">
+              <div className="w-[66%] h-full lg:pt-10 pl-6 lg:pl-0">
                 <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858]">Key Specifications</h1>
                 <div className="w-full h-fit-content mt-2 grid grid-cols-1 lg:grid-cols-2 gap-1 ">
                   <div className="h-[50px] lg:h-[100px] flex items-center">
@@ -183,7 +183,7 @@ export default function Home() {
               </div>
 
             </div>
-            <div className="w-full relative h-[140px] border-t border-zinc-300">
+            <div className="w-full relative h-[fit-content] border-t border-zinc-300">
               <h1 className="font-medium mt-2 text-[#253858]">Xiaomi Redmi Note 14 Pro 5G Prices</h1>
               <div className="w-full h-[50px] mt-3 rounded-[12px] px-4 border border-zinc-300 flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -194,12 +194,22 @@ export default function Home() {
                 <p className="font-medium text-sm text-[#2f466f]">₹30,999</p>
 
                 <button className="text-white font-medium px-4 py-[0.4em] text-sm rounded-[50px] bg-[#007fdb]">Go to store</button>
-              </div>          
+              </div>   
+              <div className="w-full h-[50px] mt-3 rounded-[12px] px-4 border border-zinc-300 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Image width={14} height={14} src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart icon"/>
+                  <p className="text-xs text-zinc-600">Amazon</p>
+                </div>
+
+                <p className="font-medium text-sm text-[#2f466f]">₹30,999</p>
+
+                <button className="text-white font-medium px-4 py-[0.4em] text-sm rounded-[50px] bg-[#007fdb]">Go to store</button>
+              </div>        
             </div>
           </div>
         </div>
 
-        <div className="w-full mt-[10px] h-screen bg-white p-[14px] relative">
+        <div className="w-full lg:w-[80%] mt-[10px] min-h-screen bg-white p-[14px] relative">
           <div className="w-full h-[70px] border-b border-zinc-300 flex justify-between">
             <div>
               <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858]">Expert View</h1>
@@ -223,7 +233,7 @@ export default function Home() {
             <CircularProgressBar percentage={70} type={'VFM'}/>
           </div>
 
-          <div className="relative w-full flex gap-2 mt-4 h-[210px]">
+          <div className="relative w-full flex gap-2 mt-4 min-h-[210px]">
             <div className="h-full w-full bg-[#f4faf7] px-[9px] py-[16px]">
               <div className="w-full flex gap-2">
                 <ThumbsUp className="text-[#61a230] w-[1em]"/>
@@ -262,7 +272,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full mt-[10px] h-screen bg-white relative border border-[#e6e6ef] rounded-[10px]">
+        <div className="w-full lg:w-[80%] mt-[10px] h-screen bg-white relative border border-[#e6e6ef] rounded-[10px]">
           <div className="w-full h-[120px] bg-gradient-to-t from-[#e6eafa] to-white p-[14px] rounded-t-[10px]">
             <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858] ">Xiaomi Redmi Note 14 Pro+ 5G Specifications</h1>
             <div className="flex gap-2 w-full mt-2 overflow-auto scrollbar-none">
@@ -278,7 +288,23 @@ export default function Home() {
               <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Seonsors</div>
             </div>
           </div>
-          <div className="w-full h-full p-[14px]"></div>
+
+          <div id="specs" className="w-full h-full p-2">
+            <div id="performance" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <Cpu className="w-4"/>
+                <p className="text-sm font-medium">Performance</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px]">7.0/10</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4">
+                <div className="w-full flex justify-between">
+                  <p className="text-xs">Chipset</p>
+                  <p className="text-xs max-w-[55%]">:  Qualcum Snapdragon 7s Gen 3</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
