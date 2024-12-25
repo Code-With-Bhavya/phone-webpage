@@ -34,7 +34,7 @@ export default function Home() {
   let triggerUp = false;
   useEffect(()=> {
     window.addEventListener("scroll", ()=> {
-      let scrollPosition = window.scrollY;
+      const scrollPosition = window.scrollY;
       const target = 600
 
       if (scrollPosition >= target && triggerDown) {
