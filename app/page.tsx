@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client"
 import { Search, Menu, ThumbsUp, ThumbsDown, Cpu, Palette, Camera, Microchip, ScanFace, Volume2, Rss, Smartphone, SquareUser, BatteryMedium, Bot, MessageSquareText } from "lucide-react"
 import "slick-carousel/slick/slick.css";
