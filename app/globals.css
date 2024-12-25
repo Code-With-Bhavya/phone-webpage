@@ -47,3 +47,13 @@ body {
 .slick-arrow::before {
   color: #9baec2 !important;
 }
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+

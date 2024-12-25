@@ -7,8 +7,13 @@ import Image from "next/image";
 import Slider from "react-slick";
 import CircularProgressBar from "./components/progressbar"
 import Footer from './components/footer'
+import PhoneComparison from "./components/phone-comparison"
+import MobileLinks from "./components/mobile-links"
+
+
 import { useEffect, useRef } from 'react'
 import { useState } from 'react'
+
 
 export default function Home() {
   const [Selected, setSelected] = useState('overview')
@@ -53,16 +58,16 @@ export default function Home() {
     })
 
     function downTrigger() {
-      console.log("down Triggered");
       if (stickyNavRef.current) {
+        console.log("down Triggered");
         stickyNavRef.current.style.position = "sticky";
         stickyNavRef.current.style.top = "0px";
       }
     }
     
     function upTrigger() {
-      console.log('up triggered');
       if (stickyNavRef.current) {
+        console.log('up triggered');
         stickyNavRef.current.style.position = "absolute";
         stickyNavRef.current.style.top = "-100%";
       }
@@ -73,28 +78,26 @@ export default function Home() {
   return (
     <>
     <div className="w-screen relative">
-      <header>
-        <div ref={stickyNavRef} className="absolute z-10 top-[-100%] h-[40px] md:h-[50px] flex overflow-auto scrollbar-none w-full transition-all duration-300 bg-[#023359]">
-          <div onClick={()=> setSelected('overview')} className={`${Selected == "overview" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Overview</div>
-          <div onClick={()=> setSelected('specs')} className={`${Selected == "specs" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Specs</div>
-          <div onClick={()=> setSelected('photos')} className={`${Selected == "photos" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Photos</div>
-          <div onClick={()=> setSelected('prices')} className={`${Selected == "prices" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Prices</div>
-          <div onClick={()=> setSelected('compare')} className={`${Selected == "compare" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Compare</div>
-          <div onClick={()=> setSelected('expert')} className={`${Selected == "expert" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Expert View</div>
-          <div onClick={()=> setSelected('news')} className={`${Selected == "news" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>News</div>
-          <div onClick={()=> setSelected('competators')} className={`${Selected == "competators" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Competators</div>
-          <div onClick={()=> setSelected('benchmarks')} className={`${Selected == "benchmarks" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Benchmarks</div>
-        </div>
-        <nav className="w-full bg-[#023359] h-[64px] overflow-hidden flex items-center px-6 justify-between">
-          <Menu className="text-white cursor-pointer"/>
-          <h1 className="text-[1.6em] text-white font-semibold">Logo</h1>
-          <Search className="text-white cursor-pointer"/>
-        </nav>
-      </header>
+      <div ref={stickyNavRef} className="absolute z-[30] top-[-100%] h-[40px] md:h-[50px] flex overflow-auto scrollbar-none w-full transition-all duration-300 bg-[#023359]">
+        <div onClick={()=> setSelected('overview')} className={`${Selected == "overview" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Overview</div>
+        <div onClick={()=> setSelected('specs')} className={`${Selected == "specs" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Specs</div>
+        <div onClick={()=> setSelected('photos')} className={`${Selected == "photos" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Photos</div>
+        <div onClick={()=> setSelected('prices')} className={`${Selected == "prices" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Prices</div>
+        <div onClick={()=> setSelected('compare')} className={`${Selected == "compare" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Compare</div>
+        <div onClick={()=> setSelected('expert')} className={`${Selected == "expert" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Expert View</div>
+        <div onClick={()=> setSelected('news')} className={`${Selected == "news" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>News</div>
+        <div onClick={()=> setSelected('competators')} className={`${Selected == "competators" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Competators</div>
+        <div onClick={()=> setSelected('benchmarks')} className={`${Selected == "benchmarks" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Benchmarks</div>
+      </div>
+      <nav className="w-full bg-[#023359] h-[64px] overflow-hidden flex items-center px-6 justify-between">
+        <Menu className="text-white cursor-pointer"/>
+        <h1 className="text-[1.6em] text-white font-semibold">Logo</h1>
+        <Search className="text-white cursor-pointer"/>
+      </nav>
 
       <main className="bg-[#f2f7ff] w-full pt-[10px] px-[10px] flex flex-col items-center">
         {/*container*/}
-        <div className="w-full lg:w-[80%] min-h-screen bg-white p-[14px] relative">
+        <div className="w-full lg:w-[80%] h-[fit-content] bg-white p-[14px] relative">
           <div id="name" className="w-full relative h-[83px] border-b border-zinc-300">
             <h1 className="trunk txt-heading font-semibold text-xl text-[#253858]">Xiaomi Redmi Note 14 Pro+ 5G</h1>
             <p className="text-xs text-[#7b879b]">Market Satus: <span className="text-[#2f466f]"> Available </span> | Released On:<span className="text-[#2f466f]"> 09 Dec 2024 </span> </p>
@@ -291,8 +294,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
-
           </div>
 
           <div id="specs" className="w-full h-[fit-content] flex flex-col gap-6 p-2">
@@ -339,8 +340,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            
+    
             <div id="design" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
               <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
                 <Palette className="w-4" />
@@ -700,7 +700,27 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
 
+        <div className="w-full lg:w-[80%] mt-[10px] h-[fit-content] bg-white relative border border-[#e6e6ef] rounded-[10px]">
+          <div className="w-full h-[100px] bg-gradient-to-t from-[#e6eafa] to-white p-[14px] rounded-t-[10px]">
+            <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858] ">Alternatives</h1>
+            <div className="flex gap-2 w-full mt-2 overflow-auto scrollbar-none">
+              {['Popular', 'Cheaper', 'From Xiaomi', 'Other Brands'].map((id) => (
+                <div key={id} className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center whitespace-nowrap justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}>
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="compare" className="w-full h-[fit-content] overflow-hidden relative p-2">
+            <PhoneComparison/>
+          </div>
+        </div>
+
+        <div className="w-full lg:w-[80%] mt-[10px] h-[fit-content] bg-white p-[14px] relative">
+          <MobileLinks/>
         </div>
       </main>
 
