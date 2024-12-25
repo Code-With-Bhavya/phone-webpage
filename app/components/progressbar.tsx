@@ -7,12 +7,12 @@ export default function CircularProgressBar({percentage, type}: CircularProgress
   const score = percentage / 10; // Convert percentage to score (e.g., 85 -> 8.5)
 
   // Function to determine the stroke color based on the score
-  const getStrokeColor = (score) => {
+  const getStrokeColor = (score: number): string => {
     if (score > 7) return "#62b299"; // Greenish for scores >= 7
     if (score > 5) return "#f9c74f"; // Yellowish for scores >= 5 and < 7
     return "#f94144"; // Reddish for scores < 5
   };
-
+  
   const strokeColor = getStrokeColor(score);
 
   return (
