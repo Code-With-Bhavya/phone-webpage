@@ -51,16 +51,21 @@ export default function Home() {
     })
 
     function downTrigger() {
-      console.log("down Triggered")
-      stickyNavRef.current.style.position = "sticky"
-      stickyNavRef.current.style.top = "0px"
+      console.log("down Triggered");
+      if (stickyNavRef.current) {
+        stickyNavRef.current.style.position = "sticky";
+        stickyNavRef.current.style.top = "0px";
+      }
     }
-
+    
     function upTrigger() {
-      console.log('up triggered')
-      stickyNavRef.current.style.position = "absolute"
-      stickyNavRef.current.style.top = "-100%"
+      console.log('up triggered');
+      if (stickyNavRef.current) {
+        stickyNavRef.current.style.position = "absolute";
+        stickyNavRef.current.style.top = "-100%";
+      }
     }
+    
   },[])
 
   return (
