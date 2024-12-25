@@ -1,5 +1,9 @@
 /* eslint-disable */
-export default function CircularProgressBar({percentage, type}) {
+interface CircularProgressBarProps {
+  percentage: number;
+  type: string;
+}
+export default function CircularProgressBar({percentage, type}: CircularProgressBarProps) {
   const score = percentage / 10; // Convert percentage to score (e.g., 85 -> 8.5)
 
   // Function to determine the stroke color based on the score
