@@ -68,6 +68,7 @@ export default function Home() {
     }
   },[])
 
+
   return (
     <>
     <div className="w-screen relative">
@@ -283,37 +284,13 @@ export default function Home() {
           <div className="w-full h-[120px] bg-gradient-to-t from-[#e6eafa] to-white p-[14px] rounded-t-[10px]">
             <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858] ">Xiaomi Redmi Note 14 Pro+ 5G Specifications</h1>
             <div className="flex gap-2 w-full mt-2 overflow-auto scrollbar-none">
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('performance').scrollIntoView({ behavior: 'smooth' })}>
-                Performance
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('design').scrollIntoView({ behavior: 'smooth' })}>
-                Design
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('display').scrollIntoView({ behavior: 'smooth' })}>
-                Display
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('camera').scrollIntoView({ behavior: 'smooth' })}>
-                Camera
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('battery').scrollIntoView({ behavior: 'smooth' })}>
-                Battery
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('storage').scrollIntoView({ behavior: 'smooth' })}>
-                Storage
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('software').scrollIntoView({ behavior: 'smooth' })}>
-                Software
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('connectivity').scrollIntoView({ behavior: 'smooth' })}>
-                Connectivity
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('sound').scrollIntoView({ behavior: 'smooth' })}>
-                Sound
-              </div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('sensors').scrollIntoView({ behavior: 'smooth' })}>
-                Sensors
-              </div>
+              {['performance', 'design', 'display', 'camera', 'battery', 'storage', 'software', 'connectivity', 'sound', 'sensors'].map((id) => (
+                <div key={id} className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}>
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                </div>
+              ))}
             </div>
+
 
           </div>
 
