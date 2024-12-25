@@ -113,7 +113,7 @@ export default function PhoneComparison() {
               </div>
             </div>
             <div className="divide-y">
-              <div className="p-2 md:p-4 text-xs md:text-sm flex items-center">
+              <div className="p-2 md:p-4 text-xs md:text-sm flex items-center bg-[#F6F6F8]">
                 <Cpu className="w-4 h-4 mr-2" />
                 <p className="text-gray-600">{phones[0].processor}</p>
               </div>
@@ -124,7 +124,7 @@ export default function PhoneComparison() {
                   <p className="text-gray-500">{phones[0].displayFeature}</p>
                 </div>
               </div>
-              <div className="p-2 md:p-4 text-xs md:text-sm flex items-center">
+              <div className="p-2 md:p-4 text-xs md:text-sm flex items-center bg-[#F6F6F8]">
                 <Camera className="w-4 h-4 mr-2" />
                 <div>
                   <p className="text-gray-600">{phones[0].rearCamera}</p>
@@ -138,7 +138,7 @@ export default function PhoneComparison() {
                   <p className="text-gray-500">{phones[0].storage}</p>
                 </div>
               </div>
-              <div className="p-2 md:p-4 text-xs md:text-sm flex items-center">
+              <div className="p-2 md:p-4 text-xs md:text-sm flex items-center bg-[#F6F6F8]">
                 <Battery className="w-4 h-4 mr-2" />
                 <div>
                   <p className="text-gray-600">{phones[0].battery}</p>
@@ -158,7 +158,7 @@ export default function PhoneComparison() {
             onScroll={handleScroll}
           >
             {phones.slice(1).map((phone, i) => (
-              <div key={i} className={`w-[200px] md:w-[270px] flex-shrink-0 border-r ${i % 2 === 0 ? 'bg-white' : 'bg-gray-100'}`}>
+              <div key={i} className={`w-[200px] md:w-[270px] flex-shrink-0 border-r`}>
                 <div className="p-2 md:p-4 border-b h-[200px] md:h-[280px] flex items-center justify-center">
                   <div className="text-center">
                     <img 
@@ -175,14 +175,14 @@ export default function PhoneComparison() {
                   </div>
                 </div>
                 <div className="divide-y">
-                  <div className="p-2 md:p-4 text-xs md:text-sm">
+                  <div className="p-2 md:p-4 text-xs md:text-sm bg-[#F6F6F8]">
                     <p className="text-gray-600">{phone.processor}</p>
                   </div>
                   <div className="p-2 md:p-4 text-xs md:text-sm">
                     <p className="text-gray-600">{phone.display}</p>
                     <p className="text-gray-500">{phone.displayFeature}</p>
                   </div>
-                  <div className="p-2 md:p-4 text-xs md:text-sm">
+                  <div className="p-2 md:p-4 text-xs md:text-sm bg-[#F6F6F8]">
                     <p className="text-gray-600">{phone.rearCamera}</p>
                     <p className="text-gray-600">{phone.frontCamera}</p>
                   </div>
@@ -190,7 +190,7 @@ export default function PhoneComparison() {
                     <p className="text-gray-600">{phone.ram}</p>
                     <p className="text-gray-500">{phone.storage}</p>
                   </div>
-                  <div className="p-2 md:p-4 text-xs md:text-sm">
+                  <div className="p-2 md:p-4 text-xs md:text-sm  bg-[#F6F6F8]">
                     <p className="text-gray-600">{phone.battery}</p>
                     <p className="text-gray-500">{phone.charging}</p>
                   </div>
