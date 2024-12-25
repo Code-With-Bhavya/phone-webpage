@@ -1,5 +1,5 @@
 "use client"
-import { Search, Menu, ThumbsUp, ThumbsDown, Cpu, Camera, Microchip, Rss, Smartphone, SquareUser, BatteryMedium, Bot, MessageSquareText } from "lucide-react"
+import { Search, Menu, ThumbsUp, ThumbsDown, Cpu, Palette, Camera, Microchip, ScanFace, Volume2, Rss, Smartphone, SquareUser, BatteryMedium, Bot, MessageSquareText } from "lucide-react"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
@@ -65,28 +65,29 @@ export default function Home() {
         stickyNavRef.current.style.top = "-100%";
       }
     }
-    
   },[])
 
   return (
     <>
     <div className="w-screen relative">
-      <div ref={stickyNavRef} className="absolute z-10 top-[-100%] h-[40px] md:h-[50px] flex overflow-auto scrollbar-none w-full transition-all duration-300 bg-[#023359]">
-        <div onClick={()=> setSelected('overview')} className={`${Selected == "overview" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Overview</div>
-        <div onClick={()=> setSelected('specs')} className={`${Selected == "specs" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Specs</div>
-        <div onClick={()=> setSelected('photos')} className={`${Selected == "photos" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Photos</div>
-        <div onClick={()=> setSelected('prices')} className={`${Selected == "prices" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Prices</div>
-        <div onClick={()=> setSelected('compare')} className={`${Selected == "compare" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Compare</div>
-        <div onClick={()=> setSelected('expert')} className={`${Selected == "expert" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Expert View</div>
-        <div onClick={()=> setSelected('news')} className={`${Selected == "news" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>News</div>
-        <div onClick={()=> setSelected('competators')} className={`${Selected == "competators" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Competators</div>
-        <div onClick={()=> setSelected('benchmarks')} className={`${Selected == "benchmarks" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Benchmarks</div>
-      </div>
-      <nav className="w-full bg-[#023359] h-[64px] overflow-hidden flex items-center px-6 justify-between">
-        <Menu className="text-white cursor-pointer"/>
-        <h1 className="text-[1.6em] text-white font-semibold">Logo</h1>
-        <Search className="text-white cursor-pointer"/>
-      </nav>
+      <header>
+        <div ref={stickyNavRef} className="absolute z-10 top-[-100%] h-[40px] md:h-[50px] flex overflow-auto scrollbar-none w-full transition-all duration-300 bg-[#023359]">
+          <div onClick={()=> setSelected('overview')} className={`${Selected == "overview" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Overview</div>
+          <div onClick={()=> setSelected('specs')} className={`${Selected == "specs" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Specs</div>
+          <div onClick={()=> setSelected('photos')} className={`${Selected == "photos" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Photos</div>
+          <div onClick={()=> setSelected('prices')} className={`${Selected == "prices" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Prices</div>
+          <div onClick={()=> setSelected('compare')} className={`${Selected == "compare" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Compare</div>
+          <div onClick={()=> setSelected('expert')} className={`${Selected == "expert" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Expert View</div>
+          <div onClick={()=> setSelected('news')} className={`${Selected == "news" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>News</div>
+          <div onClick={()=> setSelected('competators')} className={`${Selected == "competators" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Competators</div>
+          <div onClick={()=> setSelected('benchmarks')} className={`${Selected == "benchmarks" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Benchmarks</div>
+        </div>
+        <nav className="w-full bg-[#023359] h-[64px] overflow-hidden flex items-center px-6 justify-between">
+          <Menu className="text-white cursor-pointer"/>
+          <h1 className="text-[1.6em] text-white font-semibold">Logo</h1>
+          <Search className="text-white cursor-pointer"/>
+        </nav>
+      </header>
 
       <main className="bg-[#f2f7ff] w-full pt-[10px] px-[10px] flex flex-col items-center">
         {/*container*/}
@@ -214,7 +215,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full lg:w-[80%] mt-[10px] min-h-screen bg-white p-[14px] relative">
+        <div className="w-full lg:w-[80%] mt-[10px] h-[fit-content] bg-white p-[14px] relative">
           <div className="w-full h-[70px] border-b border-zinc-300 flex justify-between">
             <div>
               <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858]">Expert View</h1>
@@ -273,43 +274,454 @@ export default function Home() {
               <h1 className="text-[#2f466f] font-medium">Verdict</h1>
             </div>
 
-            <p className="text-[#2f466f] mt-4 text-sm lg:text-[1em]">The Redmi Note 14 Pro Plus stands out with its excellent display, dependable battery, capable camera, and sleek design, making it a compelling choice. However, its drawbacks, including bloatware, spammy notifications, and a steep price, cannot be overlooked. Alternatives like the Vivo T3 Ultra offer better performance, the Realme GT 6T provides balanced features, and the Motorola Edge 50 Pro delivers a clean UI experience.</p>
+            <p className="text-[#2f466f] mt-4 text-sm max-w-[50em] lg:text-[1em]">The Redmi Note 14 Pro Plus stands out with its excellent display, dependable battery, capable camera, and sleek design, making it a compelling choice. However, its drawbacks, including bloatware, spammy notifications, and a steep price, cannot be overlooked. Alternatives like the Vivo T3 Ultra offer better performance, the Realme GT 6T provides balanced features, and the Motorola Edge 50 Pro delivers a clean UI experience.</p>
           </div>
         </div>
 
-        <div className="w-full lg:w-[80%] mt-[10px] h-screen bg-white relative border border-[#e6e6ef] rounded-[10px]">
+        <div className="w-full lg:w-[80%] mt-[10px] h-[fit-content] bg-white relative border border-[#e6e6ef] rounded-[10px]">
           <div className="w-full h-[120px] bg-gradient-to-t from-[#e6eafa] to-white p-[14px] rounded-t-[10px]">
             <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858] ">Xiaomi Redmi Note 14 Pro+ 5G Specifications</h1>
             <div className="flex gap-2 w-full mt-2 overflow-auto scrollbar-none">
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Performance</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Design</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Display</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Camera</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Battery</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Storage</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Software</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Connectivity</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Sound</div>
-              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3">Seonsors</div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('performance').scrollIntoView({ behavior: 'smooth' })}>
+                Performance
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('design').scrollIntoView({ behavior: 'smooth' })}>
+                Design
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('display').scrollIntoView({ behavior: 'smooth' })}>
+                Display
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('camera').scrollIntoView({ behavior: 'smooth' })}>
+                Camera
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('battery').scrollIntoView({ behavior: 'smooth' })}>
+                Battery
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('storage').scrollIntoView({ behavior: 'smooth' })}>
+                Storage
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('software').scrollIntoView({ behavior: 'smooth' })}>
+                Software
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('connectivity').scrollIntoView({ behavior: 'smooth' })}>
+                Connectivity
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('sound').scrollIntoView({ behavior: 'smooth' })}>
+                Sound
+              </div>
+              <div className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById('sensors').scrollIntoView({ behavior: 'smooth' })}>
+                Sensors
+              </div>
             </div>
+
           </div>
 
-          <div id="specs" className="w-full h-full p-2">
+          <div id="specs" className="w-full h-[fit-content] flex flex-col gap-6 p-2">
+
             <div id="performance" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
               <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
-                <Cpu className="w-4"/>
-                <p className="text-sm font-medium">Performance</p>
-                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px]">7.0/10</div>
+                <Cpu className="w-4" />
+                <p className="text-sm font-medium text-[#073F6B]">Performance</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">7.0/10</div>
               </div>
 
-              <div className="w-full h-full flex flex-col p-4">
+              <div className="w-full h-full flex flex-col p-4 gap-3">
                 <div className="w-full flex justify-between">
-                  <p className="text-xs">Chipset</p>
-                  <p className="text-xs max-w-[55%]">:  Qualcum Snapdragon 7s Gen 3</p>
+                  <p className="text-sm text-[#2f466f]">Chipset</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Qualcomm Snapdragon 7s Gen 3</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">No Of Cores</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 8 (Octa Core)</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">CPU</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 2.5GHz, Single core, Cortex A720 <br /> 2.4GHz, Tri core, Cortex A720 <br /> 1.8GHz, Quad core, Cortex A520</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Architecture</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 64-bit</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Fabrication</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 4 nm</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">RAM</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 8 GB</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">RAM Type</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: LPDDR4X</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Graphics</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Adreno 740</p>
+                </div>
+              </div>
+            </div>
+
+            
+            <div id="design" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <Palette className="w-4" />
+                <p className="text-sm font-medium text-[#073F6B]">Design</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">8.5/10</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Build</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Corning Gorilla Glass 7i, Eco Leather back panel</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Height</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 6.4 inches (162.53 mm)</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Width</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 2.94 inches (74.67 mm)</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Thickness</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 0.35 inches (8.87 mm)</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Weight</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 210 grams</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Colors</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Titan Black, Spectre Blue, Phantom Purple</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Water Resistant</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes, IP68</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Ruggedness</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Dust proof, Water proof</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Screen Unlock</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Fingerprint, Face unlock</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="display" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <Smartphone className="w-4"/>
+                <p className="text-sm font-medium text-[#073F6B]">Display</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">8.5/10</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Resolution</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 1220 x 2712 pixels</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Aspect Ratio</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 20:9</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Display Type</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: AMOLED, 3D Curved, Always-On display, Curved Display, Dolby Vision, HDR 10+, Hydro Touch</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Size</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 6.67 inches (16.94 cms)</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Bezel-less display</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes, with Punch-hole</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Pixel Density</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 446 pixels per inch (ppi)</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Protection</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Corning Gorilla Glass, Glass Victus 2</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">TouchScreen</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes, Capacitive, Multi-touch</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Color Reproduction</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 68B Colors</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Screen to body percentage</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 88.5 %</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Display Refresh Rate</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 120Hz</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Touch Refresh Rate</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 480Hz</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="camera" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <Camera className="w-4"/>
+                <p className="text-sm font-medium text-[#073F6B]">Camera</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">8.0/10</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Rear camera setup</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Triple</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Primary Rear camera</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 50 MP, Wide Angle lens, f/1.6 aperture, 24 mm focal length, 1.55" sensor size, 1µm pixel size</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Secondary Rear camera</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 8 MP, Ultra-Wide Angle lens, f/2.2 aperture, 15 mm focal length, 1.4" sensor size, 1.12µm pixel size</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Tertiary Rear camera</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 50 MP, Telephoto lens, f/2.0 aperture, 60 mm focal length, 2.76" sensor size</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Front camera setup</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Single</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Primary Front camera</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 20 MP, Wide Angle lens, f/2.2 aperture, 21 mm focal length, 4.0" sensor size, 0.7µm pixel size</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Flash</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: LED Rear flash</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Video Resolution (Rear)</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 3840x2160 @ 30 fps, 1920x1080 @ 120 fps</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Video Resolution (Front)</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 1920x1080 @ 60 fps</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Video Recording Features</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Dual Video Recording</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Optical Image Stabilization (OIS)</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Camera Features</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Auto Flash, Auto Focus, Face detection, Touch to focus</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Shooting Modes</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Continuous Shooting, High Dynamic Range mode (HDR)</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="battery" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <BatteryMedium className="w-4" />
+                <p className="text-sm font-medium text-[#073F6B]">Battery</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">8.5/10</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Type</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Silicon Carbon</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Capacity</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 6200 mAh</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Removable</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: No</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Fast Charging</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes, Hyper, 90W</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Wireless Charging</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: No</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="storage" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <Microchip className="w-4" />
+                <p className="text-sm font-medium text-[#073F6B]">Storage</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">--</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Internal Memory</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 128 GB</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Memory type</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: UFS 2.2</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Expandable Memory</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: No</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="software" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <Bot className="w-4" />
+                <p className="text-sm font-medium text-[#073F6B]">Software</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">8.0/10</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Operating System</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Android v14</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Custom UI</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: HyperOS</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="connectivity" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <Rss className="w-4" />
+                <p className="text-sm font-medium text-[#073F6B]">Connectivity</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">--</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">SIM Configuration</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Dual SIM</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">SIM1</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Nano, 5G, 4G</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">SIM2</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Nano, 5G, 4G</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">SIM1 Bands</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 5G: FDD N1/N3/N5/N8/N28, TDD N38/N40/N41/N77/N78, 4G: TD-LTE 2600/2300/2500, FD-LTE 2100/1800/900/700/850</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">SIM2 Bands</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: 5G: FDD N1/N3/N5/N8/N28, TDD N38/N40/N41/N77/N78, 4G: TD-LTE 2600/2300/2500, FD-LTE 2100/1800/900/700/850</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Voice over LTE (VoLTE)</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Wi-Fi</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes, with a/ac/ax/ax 6GHz/b/g/n/n 5GHz, MIMO</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Wi-Fi Features</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Mobile Hotspot</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">USB</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: USB 2.0, USB Type-C, Mass storage device, USB charging, USB On-The-Go</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Bluetooth</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Bluetooth v5.4</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">USB OTG Support</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">GPS</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes with A-GPS, Glonass</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">NFC Chipset</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Infrared</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="sound" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <Volume2 className="w-4" />
+                <p className="text-sm font-medium text-[#073F6B]">Sound</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">8.0/10</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Speaker</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Speaker Features</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Dolby Atmos</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Audio Jack</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes, USB Type-C</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Video Player</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes, Video Formats: MP4</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="sensors" className="w-full h-[fit-content] rounded-[6px] border border-[#e6e6ef] relative">
+              <div className="w-full h-[40px] flex gap-2 items-center px-2 bg-[#f3f5fd]">
+                <ScanFace className="w-4" />
+                <p className="text-sm font-medium text-[#073F6B]">Sensors</p>
+                <div className="py-[2px] px-2 bg-white text-[0.6em] flex items-center rounded-[50px] text-[#2A95E2] font-bold">--</div>
+              </div>
+
+              <div className="w-full h-full flex flex-col p-4 gap-3">
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Fingerprint sensor</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes, On-screen</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Face Unlock</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Yes</p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p className="text-sm text-[#2f466f]">Other Sensors</p>
+                  <p className="text-sm w-[55%] text-[#2f466f]">: Light sensor, Proximity sensor, Accelerometer, Compass, Gyroscope</p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </main>
     </div>
