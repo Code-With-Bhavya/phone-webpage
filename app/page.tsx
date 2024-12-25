@@ -107,9 +107,10 @@ export default function Home() {
               <div className="text-xs rounded-full p-1 px-4 ml-4 bg-[#eefffc]">8/10 <span className="opacity-[0.6]">By Expert</span></div>
             </div>
           </div>
+
           <div className="w-full relative h-full">
-            <div id="product" className="w-full flex py-6">
-              <div className="w-[34%] relative  relative flex items-center justify-center">
+            <div id="product" className="w-full flex pt-6 pb-2">
+              <div className="w-[40%] relative  relative flex items-top justify-center">
                <div className="slider-container w-[80%]">
                   <Slider {...settings}>
                     <div id="imgCont" className="w-full flex items-center justify-center">
@@ -125,9 +126,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-[66%] h-full lg:pt-10 pl-6 lg:pl-0">
+              <div className="w-[60%] h-full lg:pt-10 pl-6 lg:pl-0">
                 <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858]">Key Specifications</h1>
-                <div className="w-full h-fit-content mt-2 grid grid-cols-1 lg:grid-cols-2 gap-1 ">
+                <div className="w-full h-fit-content mt-2 grid grid-cols-1 lg:grid-cols-2  ">
                   <div className="h-[50px] lg:h-[100px] flex items-center">
                     <Cpu className="text-[#2D3F5E]"/>
                     <div className="ml-2 lg:ml-4">
@@ -193,8 +194,13 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-
             </div>
+
+            <div className="w-full h-[50px] h-[fit-content] mb-4 flex justify-between px-4">
+              <button className="border border-blue-500 rounded-[50px] px-6 py-1 text-blue-500 font-semibold text-sm">+ Compare</button>
+              <button onClick={()=> document.getElementById('specs')?.scrollIntoView({behavior: 'smooth'})} className="border border-blue-500 rounded-[50px] px-6 py-1 text-blue-500 font-semibold text-sm">View Full Specs</button>
+            </div>
+
             <div className="w-full relative h-[fit-content] border-t border-zinc-300">
               <h1 className="font-medium mt-2 text-[#253858]">Xiaomi Redmi Note 14 Pro 5G Prices</h1>
               <div className="w-full h-[50px] mt-3 rounded-[12px] px-4 border border-zinc-300 flex items-center justify-between">
@@ -219,6 +225,7 @@ export default function Home() {
               </div>        
             </div>
           </div>
+
         </div>
 
         <div className="w-full lg:w-[80%] mt-[10px] h-[fit-content] bg-white p-[14px] relative">
