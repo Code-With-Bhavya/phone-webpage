@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Slider from "react-slick";
 import CircularProgressBar from "./components/progressbar"
+import Footer from './components/footer'
 import { useEffect, useRef } from 'react'
 import { useState } from 'react'
 
@@ -702,6 +703,8 @@ export default function Home() {
 
         </div>
       </main>
+
+      <Footer/>
     </div>
     </>
   );
