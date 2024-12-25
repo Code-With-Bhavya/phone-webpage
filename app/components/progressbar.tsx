@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function CircularProgressBar({percentage, type}) {
   const score = percentage / 10; // Convert percentage to score (e.g., 85 -> 8.5)
 

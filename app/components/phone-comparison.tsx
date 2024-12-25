@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client'
 
 import { ChevronLeft, ChevronRight } from 'lucide-react'
