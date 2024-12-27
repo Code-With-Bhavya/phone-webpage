@@ -5,12 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Slider from "react-slick";
-import CircularProgressBar from "./components/progressbar"
-import Footer from './components/footer'
-import PhoneComparison from "./components/phone-comparison"
-import MobileLinks from "./components/mobile-links"
-
-
+import CircularProgressBar from "../components/progressbar"
+import Footer from '../components/footer'
+import PhoneComparison from "../components/phone-comparison"
+import MobileLinks from "../components/mobile-links"
 import { useEffect, useRef } from 'react'
 import { useState } from 'react'
 
