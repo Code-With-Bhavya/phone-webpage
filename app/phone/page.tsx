@@ -196,7 +196,7 @@ export default function Home() {
 
             <div className="w-full h-[50px] h-[fit-content] mb-4 flex justify-between px-4">
               <button className="border border-blue-500 rounded-[50px] px-6 py-1 text-blue-500 font-semibold text-sm">+ Compare</button>
-              <button onClick={()=> document.getElementById('specs')?.scrollIntoView({behavior: 'smooth'})} className="border border-blue-500 rounded-[50px] px-6 py-1 text-blue-500 font-semibold text-sm">View Full Specs</button>
+              <button onClick={()=> {if (typeof document !== "undefined") { document.getElementById('specs')?.scrollIntoView({behavior: 'smooth'}) }}} className="border border-blue-500 rounded-[50px] px-6 py-1 text-blue-500 font-semibold text-sm">View Full Specs</button>
             </div>
 
             <div className="w-full relative h-[fit-content] border-t border-zinc-300">
@@ -294,7 +294,7 @@ export default function Home() {
             <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858] ">Xiaomi Redmi Note 14 Pro+ 5G Specifications</h1>
             <div className="flex gap-2 w-full mt-2 overflow-auto scrollbar-none">
               {['performance', 'design', 'display', 'camera', 'battery', 'storage', 'software', 'connectivity', 'sound', 'sensors'].map((id) => (
-                <div key={id} className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}>
+                <div key={id} className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => { if (typeof document !== "undefined") {document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });}}}>
                   {id.charAt(0).toUpperCase() + id.slice(1)}
                 </div>
               ))}
@@ -712,7 +712,7 @@ export default function Home() {
             <h1 className="font-semibold text-[1.1em] lg:text-xl text-[#253858] ">Alternatives</h1>
             <div className="flex gap-2 w-full mt-2 overflow-auto scrollbar-none">
               {['Popular', 'Cheaper', 'From Xiaomi', 'Other Brands'].map((id) => (
-                <div key={id} className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center whitespace-nowrap justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}>
+                <div key={id} className="hover:bg-blue-500 hover:text-white rounded-[50px] bg-white flex items-center whitespace-nowrap justify-center text-sm text-[#50617E] py-1 px-3 cursor-pointer" >
                   {id.charAt(0).toUpperCase() + id.slice(1)}
                 </div>
               ))}
