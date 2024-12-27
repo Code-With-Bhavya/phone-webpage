@@ -37,41 +37,41 @@ export default function Home() {
 
   let triggerDown = true;
   let triggerUp = false;
-  useEffect(()=> {
-    window.addEventListener("scroll", ()=> {
-      const scrollPosition = window.scrollY;
-      const target = 600
 
-      if (scrollPosition >= target && triggerDown) {
-        triggerDown = false
-        triggerUp = true
-        downTrigger()
+  useEffect(() => {
+      if (typeof window !== "undefined") {
+          window.addEventListener("scroll", () => {
+              const scrollPosition = window.scrollY;
+              const target = 600;
+
+              if (scrollPosition >= target && triggerDown) {
+                  triggerDown = false;
+                  triggerUp = true;
+                  downTrigger();
+              }
+
+              if (scrollPosition <= target && triggerUp) {
+                  triggerUp = false;
+                  triggerDown = true;
+                  upTrigger();
+              }
+          });
       }
 
-      if (scrollPosition <= target && triggerUp) {
-        triggerUp = false
-        triggerDown = true
-        upTrigger()
+      function downTrigger() {
+          if (stickyNavRef.current) {
+              stickyNavRef.current.style.position = "sticky";
+              stickyNavRef.current.style.top = "0px";
+          }
       }
-    })
 
-    function downTrigger() {
-      if (stickyNavRef.current) {
-        console.log("down Triggered");
-        stickyNavRef.current.style.position = "sticky";
-        stickyNavRef.current.style.top = "0px";
+      function upTrigger() {
+          if (stickyNavRef.current) {
+              stickyNavRef.current.style.position = "absolute";
+              stickyNavRef.current.style.top = "-100%";
+          }
       }
-    }
-    
-    function upTrigger() {
-      if (stickyNavRef.current) {
-        console.log('up triggered');
-        stickyNavRef.current.style.position = "absolute";
-        stickyNavRef.current.style.top = "-100%";
-      }
-    }
-  },[])
-
+  }, []);
 
   return (
     <>
