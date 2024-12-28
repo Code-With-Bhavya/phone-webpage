@@ -1,7 +1,6 @@
 "use client"
-import { History, Home, Search, User } from "lucide-react";
+import { History, Home, Search, User, BookMarked } from "lucide-react";
 import Link from 'next/link';
-import Heart from "../Icons/Heart";
 
 const MobileBottomBar = () => {
 
@@ -25,7 +24,7 @@ const MobileBottomBar = () => {
 				<Link href="/">
 					<button className="relative flex flex-col items-center gap-1">
 						<div className="absolute -top-12 flex size-12 items-center justify-center rounded-full border-[3px] border-white bg-orange">
-							<Heart className="size-5 text-white ssm:size-6" />
+							<BookMarked className="size-5 text-white ssm:size-6" />
 						</div>
 						<span className="text-xs">Saved</span>
 					</button>
