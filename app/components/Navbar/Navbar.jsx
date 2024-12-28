@@ -7,7 +7,7 @@ import NavTop from "./NavTop";
 const Navbar = () => {
 	return (
 		<nav>
-			{/* Nav Top */}
+			 {/*Nav Top */}
 			<NavTop />
 			<NavMiddle />
 			<NavCategories />

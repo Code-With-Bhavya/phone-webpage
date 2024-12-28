@@ -11,6 +11,8 @@ import PhoneComparison from "../components/phone-comparison"
 import MobileLinks from "../components/mobile-links"
 import { useEffect, useRef } from 'react'
 import { useState } from 'react'
+import Navbar from "../components/Navbar/Navbar"
+
 
 
 export default function PhonePage() {
@@ -39,24 +41,23 @@ export default function PhonePage() {
   let triggerUp = false;
 
   useEffect(() => {
-      if (typeof window !== "undefined") {
-          window.addEventListener("scroll", () => {
-              const scrollPosition = window.scrollY;
-              const target = 600;
+      window.addEventListener("scroll", () => {
+          const scrollPosition = window.scrollY;
+          const target = 600;
 
-              if (scrollPosition >= target && triggerDown) {
-                  triggerDown = false;
-                  triggerUp = true;
-                  downTrigger();
-              }
+          if (scrollPosition >= target && triggerDown) {
+              triggerDown = false;
+              triggerUp = true;
+              downTrigger();
+          }
 
-              if (scrollPosition <= target && triggerUp) {
-                  triggerUp = false;
-                  triggerDown = true;
-                  upTrigger();
-              }
-          });
-      }
+          if (scrollPosition <= target && triggerUp) {
+              triggerUp = false;
+              triggerDown = true;
+              upTrigger();
+          }
+      });
+  
 
       function downTrigger() {
           if (stickyNavRef.current) {
@@ -87,11 +88,8 @@ export default function PhonePage() {
         <div onClick={()=> setSelected('competators')} className={`${Selected == "competators" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Competators</div>
         <div onClick={()=> setSelected('benchmarks')} className={`${Selected == "benchmarks" ? 'text-blue-500 border-b-[3px] border-b-blue-500' : 'text-white'} h-full px-4 w-[fit-content] cursor-pointer font-medium flex items-center text-sm`}>Benchmarks</div>
       </div>
-      <nav className="w-full bg-[#023359] h-[64px] overflow-hidden flex items-center px-6 justify-between">
-        <Menu className="text-white cursor-pointer"/>
-        <h1 className="text-[1.6em] text-white font-semibold">Logo</h1>
-        <Search className="text-white cursor-pointer"/>
-      </nav>
+
+      <Navbar/>
 
       <main className="bg-[#f2f7ff] w-full pt-[10px] px-[10px] flex flex-col items-center">
         {/*container*/}
@@ -112,13 +110,13 @@ export default function PhonePage() {
                <div className="slider-container w-[80%]">
                   <Slider {...settings}>
                     <div id="imgCont" className="w-full flex items-center justify-center">
-                      <Image width={140} height={500} alt="Phone Image" src="https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-1.jpg" />
+                      <img width={140} height={500} alt="Phone Image" src="https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-1.jpg" />
                     </div>
                     <div id="imgCont" className="w-full flex items-center justify-center">
                       <Image width={140} height={500} alt="Phone Image" src="https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-2.jpg" />
                     </div>
                     <div id="imgCont" className="w-full flex justify-center">
-                      <Image width={24} height={500} className="absolute left-[50%] translate-x-[-50%]" alt="Phone Image" src="https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-3.jpg" />
+                      <Image width={24} height={500} className="absolute h-full left-[50%] translate-x-[-50%]" alt="Phone Image" src="https://assets.mspimages.in/c/tr:h-260,t-true/23162-1734018814-3.jpg" />
                     </div>
                   </Slider>
                 </div>
@@ -203,7 +201,7 @@ export default function PhonePage() {
               <h1 className="font-medium mt-2 text-[#253858]">Xiaomi Redmi Note 14 Pro 5G Prices</h1>
               <div className="w-full h-[50px] mt-3 rounded-[12px] px-4 border border-zinc-300 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Image width={14} height={14} src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart icon"/>
+                  <img width={14} height={14} src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart icon"/>
                   <p className="text-xs text-zinc-600">Flipkart</p>
                 </div>
 
@@ -213,7 +211,7 @@ export default function PhonePage() {
               </div>   
               <div className="w-full h-[50px] mt-3 rounded-[12px] px-4 border border-zinc-300 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Image width={14} height={14} src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart icon"/>
+                  <img width={14} height={14} src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/flipkart-icon.png" alt="Flipkart icon"/>
                   <p className="text-xs text-zinc-600">Amazon</p>
                 </div>
 

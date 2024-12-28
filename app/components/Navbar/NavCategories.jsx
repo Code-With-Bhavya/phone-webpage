@@ -14,7 +14,7 @@ const NavCategories = () => {
 					{NavCategoriesLinks?.map((link, index) => (
 						<Fragment key={index}>
 							<Link
-								to="/"
+								href="/"
 								className="flex h-10 items-center justify-center gap-2 px-2 py-1 font-medium text-white"
 							>
 								{link.label}
@@ -30,19 +30,19 @@ const NavCategories = () => {
 				{/* Compare & Offers Section */}
 				<div className="ml-auto hidden w-fit items-center justify-center text-xs lg:flex 2xl:text-sm">
 					<Link
-						to="/"
+						href="/"
 						className="flex h-10 items-center justify-center bg-[#DC4F45] px-2 py-1 font-medium text-white"
 					>
 						Compare
 					</Link>
 					<Link
-						to="/"
+						href="/"
 						className="flex h-10 items-center justify-center bg-[#C8DD16] px-2 py-1 font-medium text-black"
 					>
 						Coupons
 					</Link>
 					<Link
-						to="/"
+						href="/"
 						className="flex h-10 items-center justify-center gap-2 px-2 py-1 font-medium text-white"
 					>
 						<PartyPopper className="size-4 text-orange lg:size-5" />

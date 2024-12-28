@@ -46,14 +46,14 @@ const NavTop = () => {
 				</p>
 				<div className="flex items-center gap-2">
 					<Link
-						to="https://wa.me/+91xxxxxxxxx"
+						href="https://wa.me/+91xxxxxxxxx"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<Whatsapp className="size-4 2xl:size-6" />
 					</Link>
 					<Link
-						to="https://t.me/yourtelegramusername"
+						href="https://t.me/yourtelegramusername"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -64,23 +64,23 @@ const NavTop = () => {
 
 			{/* Right Side Links */}
 			<div className="flex border-l-2 border-white text-xs font-medium 2xl:text-sm">
-				<Link className="flex items-center border-r-2 border-white px-2 text-center hover:text-white">
+				<Link href="/" className="flex items-center border-r-2 border-white px-2 text-center hover:text-white">
 					Refer & Earn
 				</Link>
 
-				<Link className="flex items-center gap-1 border-r-2 border-white px-2 text-center text-[#FFA500]">
+				<Link href="/" className="flex items-center gap-1 border-r-2 border-white px-2 text-center text-[#FFA500]">
 					<Key className="size-4" /> <span>Login</span>
 				</Link>
 
-				<Link className="flex items-center gap-1 border-r-2 border-white px-2 text-center text-[#FFA500]">
+				<Link href="/" className="flex items-center gap-1 border-r-2 border-white px-2 text-center text-[#FFA500]">
 					<User className="size-4" /> <span>Register</span>
 				</Link>
 
-				<Link className="flex items-center border-r-2 border-white px-2 text-center">
+				<Link href="/" className="flex items-center border-r-2 border-white px-2 text-center">
 					Become a Partner
 				</Link>
 
-				<Link className="flex items-center justify-center px-2 text-center">
+				<Link href="/" className="flex items-center justify-center px-2 text-center">
 					Dealer Inquiry
 				</Link>
 			</div>
