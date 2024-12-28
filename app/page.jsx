@@ -29,7 +29,7 @@ const Home = () => {
 			<BestAppliances />
 			<Footer />
 			<BottomToolBar />
-			{/*<MobileBottomBar />*/}
+			<MobileBottomBar />
 		</div>
 	);
 };

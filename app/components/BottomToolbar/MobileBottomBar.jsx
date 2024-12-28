@@ -2,19 +2,15 @@
 import { History, Home, Search, User } from "lucide-react";
 import Link from 'next/link';
 import Heart from "../Icons/Heart";
-import { useRouter } from 'next/router';
 
 const MobileBottomBar = () => {
-	const router = useRouter();
 
 	return (
 		<div className="fixed bottom-0 z-[99] w-full bg-white px-4 py-2 text-center font-medium text-[#23262FCC] lg:hidden">
 			<div className="mx-auto flex items-end justify-between sm:w-[80%]">
 				<Link href="/">
 					<button
-						className={`flex flex-col items-center gap-1 ${
-							router.pathname === "/" && "text-orange"
-						}`}
+						className={`flex flex-col items-center gap-1 text-orange`}
 					>
 						<Home className="size-5 ssm:size-6" />
 						<span className="text-xs">Home</span>
