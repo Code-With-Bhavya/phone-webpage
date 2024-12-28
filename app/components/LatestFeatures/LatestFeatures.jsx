@@ -25,7 +25,7 @@ const LatestFeatures = () => {
 					}}
 				>
 					{SmartphoneFeatures.map((item) => (
-						<SwiperSlide key={item.id} className="w-40 lg:w-48">
+						<SwiperSlide key={item.id} id="slider" className="w-40 lg:w-48">
 							<div>
 								<img
 									className="h-28 rounded-lg object-cover lg:h-32"

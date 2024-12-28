@@ -37,7 +37,8 @@ const Categories = () => {
 				{slides.map((slide, i) => (
 					<SwiperSlide
 						key={i}
-						className="flex w-fit items-center justify-center lg:w-fit"
+						id="slider"
+						className="flex items-center justify-center "
 					>
 						<div className="flex h-full w-20 flex-col items-center justify-center gap-2">
 							<img

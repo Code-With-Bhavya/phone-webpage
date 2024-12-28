@@ -24,6 +24,7 @@ const TopSlider = ({ selected, setSelected }) => {
 				{slides.map((slide, index) => (
 					<SwiperSlide
 						key={index}
+						id="slider"
 						className="z-50 flex w-fit items-center justify-center"
 					>
 						<button

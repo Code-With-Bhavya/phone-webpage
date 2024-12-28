@@ -31,7 +31,7 @@ const CompareProducts = () => {
 					className="pb-2"
 				>
 					{filterData?.map((item) => (
-						<SwiperSlide key={item.id} className="w-fit">
+						<SwiperSlide id="slider" key={item.id} className="w-fit">
 							<CompareCard item={item} />
 						</SwiperSlide>
 					))}

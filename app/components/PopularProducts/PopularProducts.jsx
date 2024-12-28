@@ -23,7 +23,7 @@ const PopularProducts = () => {
 					className="pb-2"
 				>
 					{ProductData.map((item) => (
-						<SwiperSlide key={item.id} className="w-fit">
+						<SwiperSlide id="slider" key={item.id} className="w-fit">
 							<ProductCard item={item} />
 						</SwiperSlide>
 					))}

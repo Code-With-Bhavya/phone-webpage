@@ -13,6 +13,10 @@ body {
   height: calc(100% - 200px);
 }
 
+#slider  {
+  width: fit-content;
+}
+
 #imgCont {
   display: flex !important;
 }
