@@ -1,5 +1,5 @@
 "use client"
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import Whatsapp from "../Icons/Whatsapp";
 import { Card, CardContent } from "../ui/card";
 import { Separator } from "../ui/separator";
@@ -22,13 +22,13 @@ const WpCard = () => {
 					</div>
 					<Separator orientation="vertical" className="hidden sm:block" />
 					<div className="flex items-center justify-center max-ssm:gap-2 ssm:gap-4">
-						<Link to="https://wa.me/+1234567890" target="_blank">
+						<Link href="https://wa.me/+1234567890" target="_blank">
 							<div className="flex flex-col items-center gap-2 text-center">
 								<Whatsapp className="size-7 xl:size-8" />
 								<p className="text-xs font-semibold 2xl:text-sm">Whatsapp</p>
 							</div>
 						</Link>
-						<Link to="https://t.me/yourtelegramusername" target="_blank">
+						<Link href="https://t.me/yourtelegramusername" target="_blank">
 							<div className="flex flex-col items-center gap-2 text-center">
 								<img
 									className="size-7 xl:size-8"

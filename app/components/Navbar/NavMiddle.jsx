@@ -1,7 +1,7 @@
 "use client"
 import { Menu, SearchIcon } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import Search from "../Icons/Search";
 import { Input } from "../ui/input";
 import SelectMenu from "./SeleteMenu";
@@ -24,7 +24,7 @@ const NavMiddle = () => {
 						<Menu className="size-7 text-darkBlue lg:hidden" />
 						<span className="sr-only">Open Sidebar</span>
 					</button>
-					<Link to="/">
+					<Link href="/">
 						<div>
 							<img className="h-9 w-40" src="/logo.png" alt="logo" />
 						</div>
@@ -54,14 +54,14 @@ const NavMiddle = () => {
 					<div className="flex h-10 items-center gap-3 rounded-md border-2 px-5 py-1 text-xs font-semibold 2xl:text-sm">
 						<div className="flex items-center gap-2">
 							<p>Mobile App</p>
-							<Link to="/">
+							<Link href="/">
 								<img
 									className="size-5 object-cover"
 									src="/apple.svg"
 									alt="apple"
 								/>
 							</Link>
-							<Link to="/">
+							<Link href="/">
 								<img
 									className="size-6 object-cover"
 									src="/android.svg"
@@ -71,14 +71,14 @@ const NavMiddle = () => {
 						</div>
 						<div className="flex items-center gap-2">
 							<p>Browser Extension</p>
-							<Link to="/">
+							<Link href="/">
 								<img
 									className="size-5 object-cover"
 									src="/chrome.svg"
 									alt="chrome"
 								/>
 							</Link>
-							<Link to="/">
+							<Link href="/">
 								<img className="size-6" src="/firefox.svg" alt="Firefox" />
 							</Link>
 						</div>

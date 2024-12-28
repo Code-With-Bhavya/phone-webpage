@@ -16,7 +16,7 @@ import TrendingProducts from "./components/TrendingProducts/TrendingProducts";
 const Home = () => {
 	return (
 		<div className="poppins">
-			<Navbar />
+			{/*<Navbar />*/}
 			<Hero />
 			<Categories />
 			<LatestFeatures />
@@ -29,7 +29,7 @@ const Home = () => {
 			<BestAppliances />
 			<Footer />
 			<BottomToolBar />
-			<MobileBottomBar />
+			{/*<MobileBottomBar />*/}
 		</div>
 	);
 };

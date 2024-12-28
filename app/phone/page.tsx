@@ -13,7 +13,7 @@ import { useEffect, useRef } from 'react'
 import { useState } from 'react'
 
 
-export default function Home() {
+export default function PhonePage() {
   const [Selected, setSelected] = useState('overview')
 
   const settings = {

@@ -1,11 +1,10 @@
 "use client"
 import { ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
-
+import Link from 'next/link';
 const AboutUsSide = () => {
 	return (
 		<div className="flex w-full flex-col gap-3 py-3">
-			<Link to="/about-us" className="w-full">
+			<Link href="/about-us" className="w-full">
 				<div className="flex h-10 items-center justify-between gap-2 rounded-lg bg-[#F1F6FC] px-2 py-2 text-sm font-medium">
 					<div className="flex items-center gap-2 py-1">
 						<img
@@ -20,7 +19,7 @@ const AboutUsSide = () => {
 					</div>
 				</div>
 			</Link>
-			<Link to="/contact-us" className="w-full">
+			<Link href="/contact-us" className="w-full">
 				<div className="flex h-10 items-center justify-between gap-2 rounded-lg bg-[#F1F6FC] px-2 py-2 text-sm font-medium">
 					<div className="flex items-center gap-2 py-1">
 						<img className="size-5" src="/sidebar/Letter.svg" alt="about-us" />
@@ -31,7 +30,7 @@ const AboutUsSide = () => {
 					</div>
 				</div>
 			</Link>
-			<Link to="/contact-us" className="w-full">
+			<Link href="/contact-us" className="w-full">
 				<div className="flex h-10 items-center justify-between gap-2 rounded-lg bg-[#F1F6FC] px-2 py-2 text-sm font-medium">
 					<div className="flex items-center gap-2 py-1">
 						<img
@@ -46,7 +45,7 @@ const AboutUsSide = () => {
 					</div>
 				</div>
 			</Link>
-			<Link to="/contact-us" className="w-full">
+			<Link href="/contact-us" className="w-full">
 				<div className="flex h-10 items-center justify-between gap-2 rounded-lg bg-[#F1F6FC] px-2 py-2 text-sm font-medium">
 					<div className="flex items-center gap-2 py-1">
 						<img
@@ -61,7 +60,7 @@ const AboutUsSide = () => {
 					</div>
 				</div>
 			</Link>
-			<Link to="/contact-us" className="w-full">
+			<Link href="/contact-us" className="w-full">
 				<div className="flex h-10 items-center justify-between gap-2 rounded-lg bg-[#F1F6FC] px-2 py-2 text-sm font-medium">
 					<div className="flex items-center gap-2 py-1">
 						<img
@@ -76,7 +75,7 @@ const AboutUsSide = () => {
 					</div>
 				</div>
 			</Link>
-			<Link to="/contact-us" className="w-full">
+			<Link href="/contact-us" className="w-full">
 				<div className="flex h-10 items-center justify-between gap-2 rounded-lg bg-[#F1F6FC] px-2 py-2 text-sm font-medium">
 					<div className="flex items-center gap-2 py-1">
 						<img className="size-5" src="/sidebar/Help.svg" alt="about-us" />

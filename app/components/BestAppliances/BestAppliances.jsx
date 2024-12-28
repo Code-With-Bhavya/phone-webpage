@@ -1,7 +1,7 @@
 "use client"
 import { BestAppliancesData } from "../../db/db";
 import { ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from 'next/link'
 
 const BestAppliances = () => {
 	return (
@@ -11,7 +11,7 @@ const BestAppliances = () => {
 				{BestAppliancesData.map((item) => (
 					<Link
 						key={item.id}
-						to="/hh"
+						href="/hh"
 						className="flex items-center justify-start gap-1 text-xs font-semibold text-[#23262FCC] lg:gap-2 lg:text-sm"
 					>
 						<ChevronRight className="size-5" />{" "}

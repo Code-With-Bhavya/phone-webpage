@@ -1,5 +1,6 @@
 "use client"
-import NavCategories from "./NavCategories";
+import dynamic from 'next/dynamic'
+const NavCategories = dynamic(() => import('./NavCategories'), { ssr: false });
 import NavMiddle from "./NavMiddle";
 import NavTop from "./NavTop";
 

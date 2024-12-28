@@ -1,6 +1,4 @@
 "use client";
-
-import { BrowserRouter } from "react-router-dom";
 import "./globals.css";
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
@@ -8,9 +6,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
   return (
     <html lang="en">
       <body className="antialiased">
-        <BrowserRouter>
-          {children}
-        </BrowserRouter>
+        {children}
       </body>
     </html>
   );

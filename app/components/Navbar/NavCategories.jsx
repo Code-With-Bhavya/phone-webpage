@@ -3,7 +3,7 @@ import { brands, NavCategoriesLinks } from "../../db/db";
 import { ChevronDownIcon, PartyPopper } from "lucide-react";
 import { Fragment } from "react";
 import Marquee from "react-fast-marquee";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { Separator } from "../ui/separator";
 
 const NavCategories = () => {

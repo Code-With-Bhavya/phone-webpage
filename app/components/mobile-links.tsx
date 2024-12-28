@@ -49,7 +49,7 @@ export default function MobileLinks() {
       <div>
         <h2 className="text-[#37474F] font-medium text-lg mb-4">Popular Mobile Price Lists</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-          {priceLinks.map((link, index) => (
+          {priceLinks.map((link, index) => link.href && (
             <Link 
               key={index}
               href={link.href}
@@ -65,7 +65,7 @@ export default function MobileLinks() {
       <div>
         <h2 className="text-[#37474F] font-medium text-lg mb-4">Popular Mobiles</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-          {popularPhones.map((phone, index) => (
+          {popularPhones.map((phone, index) => phone.href && (
             <Link 
               key={index}
               href={phone.href}

@@ -1,10 +1,9 @@
 "use client"
-import { Link } from "react-router-dom";
-
+import Link from 'next/link';
 const SideBarTopLinks = () => {
 	return (
 		<div className="flex items-center justify-between gap-3 px-1 pt-5 font-medium">
-			<Link to="/login">
+			<Link href="/login">
 				<div className="flex flex-col items-center justify-center gap-1">
 					<div className="flex items-center justify-center rounded-full bg-[#F1F6FC] p-2">
 						<img
@@ -16,7 +15,7 @@ const SideBarTopLinks = () => {
 					<span className="text-xs sssm:text-sm">Login</span>
 				</div>
 			</Link>
-			<Link to="/login">
+			<Link href="/login">
 				<div className="flex flex-col items-center justify-center gap-1">
 					<div className="flex items-center justify-center rounded-full bg-[#F1F6FC] p-2">
 						<img
@@ -29,7 +28,7 @@ const SideBarTopLinks = () => {
 				</div>
 			</Link>
 
-			<Link to="/login">
+			<Link href="/login">
 				<div className="flex flex-col items-center justify-center gap-1">
 					<div className="flex items-center justify-center rounded-full bg-[#F1F6FC] p-2">
 						<img
@@ -41,7 +40,7 @@ const SideBarTopLinks = () => {
 					<span className="text-xs sssm:text-sm">Compare</span>
 				</div>
 			</Link>
-			<Link to="/login">
+			<Link href="/login">
 				<div className="flex flex-col items-center justify-center gap-1">
 					<div className="flex items-center justify-center rounded-full bg-[#F1F6FC] p-2">
 						<img

@@ -1,5 +1,5 @@
 "use client"
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import Facebook from "../Icons/Facebook";
 import GooglePlus from "../Icons/GooglePlus";
 import Instagram from "../Icons/Instagram";
@@ -17,25 +17,25 @@ const NavTop = () => {
 		<div className="hidden w-full justify-between overflow-hidden bg-darkBlue px-2 text-white lg:flex">
 			{/* Social Media Icons Section */}
 			<div className="flex items-center gap-3 border-r-2 border-white py-[5px] pr-3">
-				<Link to="/" target="_blank">
+				<Link href="/" target="_blank">
 					<Facebook className="size-4 2xl:size-6" />
 				</Link>
-				<Link to="/" target="_blank">
+				<Link href="/" target="_blank">
 					<Twitter className="size-4 2xl:size-6" />
 				</Link>
-				<Link to="/" target="_blank">
+				<Link href="/" target="_blank">
 					<Linkedin className="size-4 2xl:size-6" />
 				</Link>
-				<Link to="/" target="_blank">
+				<Link href="/" target="_blank">
 					<GooglePlus className="size-4 2xl:size-6" />
 				</Link>
-				<Link to="/" target="_blank">
+				<Link href="/" target="_blank">
 					<Pinterest className="size-4 2xl:size-6" />
 				</Link>
-				<Link to="/" target="_blank">
+				<Link href="/" target="_blank">
 					<Instagram className="size-4 2xl:size-6" />
 				</Link>
-				<Link to="/" target="_blank">
+				<Link href="/" target="_blank">
 					<Rss className="size-4 2xl:size-6" />
 				</Link>
 			</div>

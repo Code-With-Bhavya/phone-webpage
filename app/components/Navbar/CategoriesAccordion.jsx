@@ -7,7 +7,7 @@ import {
 } from "../ui/accordion";
 import { CategoriesAccordionData } from "../../db/db";
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { Separator } from "../ui/separator";
 
 const CategoriesAccordion = () => {
@@ -31,9 +31,9 @@ const CategoriesAccordion = () => {
 					</AccordionTrigger>
 					<AccordionContent className="px-2 py-2">
 						<ul className="sm:text-base">
-							{category.options.map((subCategory, index) => (
+							{category.options.map((subCategory, index) => subCategory.link && (
 								<Fragment key={index}>
-									<Link to={subCategory.link}>
+									<Link href={subCategory.link}>
 										<li>{subCategory.name}</li>
 									</Link>
 									<Separator
